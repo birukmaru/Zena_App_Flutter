@@ -1,18 +1,19 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:zena_app/models/show_category.dart';
 import 'package:zena_app/models/slider_model.dart';
 
-class Sliders {
-  List<sliderModel> sliders = [];
-  Future<void> getSlider() async {
+class ShowCategoryNews {
+  List<ShowCategoryModel> categories = [];
+  Future<void> getCategoriesNews(String category) async {
     String url =
-        "https://newsapi.org/v2/everything?q=tesla&from=2024-09-03&sortBy=publishedAt&apiKey=2566886e115143cfbafc3b87fddf75b6";
+        "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=2566886e115143cfbafc3b87fddf75b6";
     var response = await http.get(Uri.parse(url));
     var jsonData = jsonDecode(response.body);
     if (jsonData['status'] == 'ok') {
       jsonData['articles'].forEach((element) {
         if (element["urlToImage"] != null && element['description'] != null) {
-          sliderModel slidermodel = sliderModel(
+          ShowCategoryModel categoryModel = ShowCategoryModel(
             title: element["title"],
             description: element['description'],
             url: element["url"],
@@ -21,7 +22,7 @@ class Sliders {
             author: element['author'],
           );
 
-          sliders.add(slidermodel);
+          categories.add(categoryModel);
         }
       });
     }
