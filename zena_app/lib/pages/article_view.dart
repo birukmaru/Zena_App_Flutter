@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
-  final String blogUrl; // Changed to 'final' as it is a constant parameter.
+  final String blogUrl; 
 
   ArticleView({required this.blogUrl});
 
@@ -30,7 +30,7 @@ class _ArticleViewState extends State<ArticleView> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Flutter"),
+            Text("Zena"),
             Text(
               "News",
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
@@ -40,7 +40,7 @@ class _ArticleViewState extends State<ArticleView> {
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: WebViewWidget(controller: _controller), // Use WebViewWidget
+      body: WebViewWidget(controller: _controller), 
     );
   }
 }

@@ -26,7 +26,7 @@ class _LandingPageState extends State<LandingPage> {
                   imageUrl:
                       "https://i.pinimg.com/564x/21/3f/90/213f904257295161cba4c450608b1329.jpg",
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.8,
+                  height: MediaQuery.of(context).size.height / 1.5,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -60,11 +60,12 @@ class _LandingPageState extends State<LandingPage> {
                     context, MaterialPageRoute(builder: (context) => Home()));
               },
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 15),
                 child: Material(
                   borderRadius: BorderRadius.circular(30),
                   elevation: 3.0,
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: EdgeInsets.symmetric(vertical: 20),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: Colors.blue,
