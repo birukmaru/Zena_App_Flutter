@@ -4,16 +4,20 @@ Welcome to Zena App, a news application built using Flutter and integrated with 
 # Features ✨
 
 News Categories: Browse news by categories such as General, Business, Health, Sport, Science, and many others.
+
 Breaking News Section: Get the latest breaking news updates as they happen in real time.
+
 Trending News Section: Stay informed on what’s trending globally or within specific categories.
+
 Smooth Navigation: User-friendly interface with easy navigation between different sections and categories.
+
 Real-time Updates: All news articles are fetched in real-time using the NewsAPI, ensuring that you always have the most current information.
 
 
 # How to Get Started 🚀
 
 ## Clone the Repository:
-git clone https://github.com/your-username/zena-app.git
+git clone https://github.com/birukmaru/Zena_App.git
 
 ## Install Dependencies:
 Navigate to the project directory and install the necessary Flutter packages:
@@ -31,11 +35,15 @@ flutter run
 # Project Structure 📂
 
 /lib
-│
+
 ├── main.dart            Entry point of the app
+
 ├── pages/               Contains the different screen widgets (Home, Categories, etc.)
+
 ├── models/              Models for the news data
+
 ├── services/            API service to fetch news data
+
 ├── widgets/             Reusable UI components
           
 # Technologies Used 🛠️
