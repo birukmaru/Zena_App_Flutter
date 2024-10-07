@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zena_app/models/article_model.dart';
 import 'package:zena_app/models/slider_model.dart';
 import 'package:zena_app/pages/article_view.dart';
-import 'package:zena_app/pages/category_news.dart';
+
 import 'package:zena_app/services/news.dart';
 import 'package:zena_app/services/slider_data.dart';
 

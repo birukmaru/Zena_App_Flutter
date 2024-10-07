@@ -14,44 +14,47 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
         child: Column(
           children: [
-            Material(
-              elevation: 3.0,
-              borderRadius: BorderRadius.circular(30),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "https://i.pinimg.com/564x/21/3f/90/213f904257295161cba4c450608b1329.jpg",
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 1.5,
-                  fit: BoxFit.cover,
+            Expanded(
+              child: Material(
+                elevation: 3.0,
+                borderRadius: BorderRadius.circular(30),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        "https://i.pinimg.com/564x/21/3f/90/213f904257295161cba4c450608b1329.jpg",
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Text(
               "News from around the\n        world for you",
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 26.0,
+                  fontSize: MediaQuery.of(context).size.height *
+                      0.03, // Dynamic font size
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(
-              "Best time to read, take your time to read\n          a littel more of this world!",
+              "Best time to read, take your time to read\n          a little more of this world!",
               style: TextStyle(
                   color: Colors.black45,
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.height *
+                      0.02, // Dynamic font size
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             GestureDetector(
@@ -60,17 +63,20 @@ class _LandingPageState extends State<LandingPage> {
                     context, MaterialPageRoute(builder: (context) => Home()));
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 child: Material(
                   borderRadius: BorderRadius.circular(30),
                   elevation: 3.0,
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(
+                      vertical: MediaQuery.of(context).size.height *
+                          0.025, // Dynamic padding
+                    ),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(30)),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Get Started",
                         style: TextStyle(
@@ -82,7 +88,10 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(
+                height: MediaQuery.of(context).size.height *
+                    0.02), // Dynamic spacing
           ],
         ),
       ),
