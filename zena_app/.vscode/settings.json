@@ -1,0 +1,12 @@
+
+{
+    "editor.formatOnSave": true,
+"editor.codeActionOnSave" : {
+    "source.fixAll":"explicit"
+}
+
+// {
+//     "dart.flutterSdkPath": "/path/to/flutter",
+    
+}
+  

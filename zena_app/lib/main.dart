@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zena_app/pages/home.dart';
 import 'package:zena_app/pages/landing_page.dart';
 
 void main() {

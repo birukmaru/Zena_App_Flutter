@@ -52,10 +52,11 @@ class _HomeState extends State<Home> {
     sliders = slider.sliders;
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -63,7 +64,7 @@ class _HomeState extends State<Home> {
             ),
             Text(
               "News",
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
             )
           ],
         ),
@@ -72,26 +73,28 @@ class _HomeState extends State<Home> {
         elevation: 0.0,
       ),
       body: _loading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: 10),
+                        margin: const EdgeInsets.only(left: 10),
                         height: 70,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemCount: categories.length,
                           itemBuilder: (context, index) {
+                            final category = categories[index];
+
                             return CatogoryTile(
-                                image: categories[index].image,
-                                categoryName: categories[index].categoryName);
+                                image: category.image,
+                                categoryName: category.categoryName);
                           },
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
                     Padding(
@@ -99,10 +102,10 @@ class _HomeState extends State<Home> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Breaking News!",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 247, 18, 1),
+                                color: Color.fromARGB(255, 247, 18, 1),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
                           ),
@@ -114,7 +117,7 @@ class _HomeState extends State<Home> {
                                       builder: (context) =>
                                           AllNews(news: "Breaking")));
                             },
-                            child: Text(
+                            child: const Text(
                               "View All",
                               style: TextStyle(
                                   color: Colors.blue,
@@ -125,7 +128,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     CarouselSlider.builder(
@@ -151,17 +154,17 @@ class _HomeState extends State<Home> {
                                 activeIndex = index;
                               });
                             })),
-                    SizedBox(
+                    const SizedBox(
                       height: 30.0,
                     ),
                     Center(child: BuildIndicator(activeIndex: activeIndex)),
-                    SizedBox(height: 30.0),
+                    const SizedBox(height: 30.0),
                     Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Trending News!",
                             style: TextStyle(
                               color: Colors.black,
@@ -177,7 +180,7 @@ class _HomeState extends State<Home> {
                                       builder: (context) =>
                                           AllNews(news: "Trending")));
                             },
-                            child: Text(
+                            child: const Text(
                               "View All",
                               style: TextStyle(
                                   color: Colors.blue,
@@ -188,13 +191,13 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Container(
                       child: ListView.builder(
                         shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
+                        physics: const ClampingScrollPhysics(),
                         itemCount: articles.length,
                         itemBuilder: (context, index) {
                           return Padding(
